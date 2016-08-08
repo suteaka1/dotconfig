@@ -7,6 +7,7 @@ PowershellをWindowsで実行し、以下の通りにコマンドを実行する
 
 ```
 PS C:\> cd c:\
+PS C:\> @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%systemdrive%\chocolatey\bin
 PS C:\> Invoke-WebRequest -Uri "https://raw.githubusercontent.com/suteaka1/dotconfig/master/Windows/chocolatey/packages.config" -OutFile "packages.config"
 PS C:\> cat .\packages.config
 PS C:\> clear
